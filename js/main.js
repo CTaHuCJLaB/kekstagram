@@ -6,6 +6,8 @@ window.main = (function () {
 
   var onLoadSuccess = function (photosParam) {
     window.main.photos = photosParam;
+    window.main.photos.splice(3, 1);
+    window.main.photos.splice(7, 1);
     window.filters.filteredPhotos = window.main.photos.slice();
     window.gallery.fillPicturesBlock(window.filters.filteredPhotos, window.filters.filteredPhotos.length);
     imgFilterSwitch.classList.remove('img-filters--inactive');
